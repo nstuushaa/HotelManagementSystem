@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdditionalEquipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="FoodOrders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestID" Type="int" />
+    <Property Name="MenuID" Type="int" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Guests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateOfBirth" Type="date" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RestaurantID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reservations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestID" Type="int" />
+    <Property Name="RoomID" Type="int" />
+    <Property Name="CheckInDate" Type="date" />
+    <Property Name="CheckOutDate" Type="date" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Restaurants">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestID" Type="int" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Rating" Type="int" />
+    <Property Name="PublishDate" Type="date" />
+  </EntityType>
+  <EntityType Name="RoomEquipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomID" Type="int" />
+    <Property Name="EquipmentID" Type="int" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomNumber" Type="int" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Availability" Type="bit" />
+  </EntityType>
+  <EntityType Name="RoomTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ServiceOrders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestID" Type="int" />
+    <Property Name="ServiceID" Type="int" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="PositionID" Type="int" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Statuses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkSchedules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="StartTime" Type="time" Precision="7" />
+    <Property Name="EndTime" Type="time" Precision="7" />
+  </EntityType>
+  <Association Name="FK__FoodOrder__Guest__5441852A">
+    <End Role="Guests" Type="Self.Guests" Multiplicity="0..1" />
+    <End Role="FoodOrders" Type="Self.FoodOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guests">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoodOrders">
+        <PropertyRef Name="GuestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FoodOrder__MenuI__5535A963">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+    <End Role="FoodOrders" Type="Self.FoodOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoodOrders">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FoodOrder__Statu__5629CD9C">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="0..1" />
+    <End Role="FoodOrders" Type="Self.FoodOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FoodOrders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Menu__Restaurant__571DF1D5">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="0..1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservati__Guest__5812160E">
+    <End Role="Guests" Type="Self.Guests" Multiplicity="0..1" />
+    <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guests">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reservations">
+        <PropertyRef Name="GuestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservati__Statu__59063A47">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="0..1" />
+    <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reservations">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reviews__GuestID__5AEE82B9">
+    <End Role="Guests" Type="Self.Guests" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guests">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="GuestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RoomEquip__Equip__5BE2A6F2">
+    <End Role="AdditionalEquipment" Type="Self.AdditionalEquipment" Multiplicity="0..1" />
+    <End Role="RoomEquipment" Type="Self.RoomEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdditionalEquipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomEquipment">
+        <PropertyRef Name="EquipmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RoomEquip__RoomI__5CD6CB2B">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+    <End Role="RoomEquipment" Type="Self.RoomEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoomEquipment">
+        <PropertyRef Name="RoomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rooms__TypeID__5DCAEF64">
+    <End Role="RoomTypes" Type="Self.RoomTypes" Multiplicity="0..1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ServiceOr__Guest__5EBF139D">
+    <End Role="Guests" Type="Self.Guests" Multiplicity="0..1" />
+    <End Role="ServiceOrders" Type="Self.ServiceOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guests">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ServiceOrders">
+        <PropertyRef Name="GuestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ServiceOr__Servi__5FB337D6">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="ServiceOrders" Type="Self.ServiceOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ServiceOrders">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ServiceOr__Statu__60A75C0F">
+    <End Role="Statuses" Type="Self.Statuses" Multiplicity="0..1" />
+    <End Role="ServiceOrders" Type="Self.ServiceOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ServiceOrders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Staff__PositionI__619B8048">
+    <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkSched__Staff__628FA481">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="WorkSchedules" Type="Self.WorkSchedules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WorkSchedules">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservations_Rooms">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+    <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Reservations">
+        <PropertyRef Name="RoomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="AdditionalEquipment" EntityType="Self.AdditionalEquipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodOrders" EntityType="Self.FoodOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guests" EntityType="Self.Guests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservations" EntityType="Self.Reservations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomEquipment" EntityType="Self.RoomEquipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomTypes" EntityType="Self.RoomTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceOrders" EntityType="Self.ServiceOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Statuses" EntityType="Self.Statuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkSchedules" EntityType="Self.WorkSchedules" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FoodOrder__Guest__5441852A" Association="Self.FK__FoodOrder__Guest__5441852A">
+      <End Role="Guests" EntitySet="Guests" />
+      <End Role="FoodOrders" EntitySet="FoodOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FoodOrder__MenuI__5535A963" Association="Self.FK__FoodOrder__MenuI__5535A963">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="FoodOrders" EntitySet="FoodOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FoodOrder__Statu__5629CD9C" Association="Self.FK__FoodOrder__Statu__5629CD9C">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="FoodOrders" EntitySet="FoodOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Menu__Restaurant__571DF1D5" Association="Self.FK__Menu__Restaurant__571DF1D5">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservati__Guest__5812160E" Association="Self.FK__Reservati__Guest__5812160E">
+      <End Role="Guests" EntitySet="Guests" />
+      <End Role="Reservations" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservati__Statu__59063A47" Association="Self.FK__Reservati__Statu__59063A47">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Reservations" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reviews__GuestID__5AEE82B9" Association="Self.FK__Reviews__GuestID__5AEE82B9">
+      <End Role="Guests" EntitySet="Guests" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RoomEquip__Equip__5BE2A6F2" Association="Self.FK__RoomEquip__Equip__5BE2A6F2">
+      <End Role="AdditionalEquipment" EntitySet="AdditionalEquipment" />
+      <End Role="RoomEquipment" EntitySet="RoomEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RoomEquip__RoomI__5CD6CB2B" Association="Self.FK__RoomEquip__RoomI__5CD6CB2B">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="RoomEquipment" EntitySet="RoomEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rooms__TypeID__5DCAEF64" Association="Self.FK__Rooms__TypeID__5DCAEF64">
+      <End Role="RoomTypes" EntitySet="RoomTypes" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ServiceOr__Guest__5EBF139D" Association="Self.FK__ServiceOr__Guest__5EBF139D">
+      <End Role="Guests" EntitySet="Guests" />
+      <End Role="ServiceOrders" EntitySet="ServiceOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ServiceOr__Servi__5FB337D6" Association="Self.FK__ServiceOr__Servi__5FB337D6">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceOrders" EntitySet="ServiceOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ServiceOr__Statu__60A75C0F" Association="Self.FK__ServiceOr__Statu__60A75C0F">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="ServiceOrders" EntitySet="ServiceOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__PositionI__619B8048" Association="Self.FK__Staff__PositionI__619B8048">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkSched__Staff__628FA481" Association="Self.FK__WorkSched__Staff__628FA481">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="WorkSchedules" EntitySet="WorkSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservations_Rooms" Association="Self.FK_Reservations_Rooms">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Reservations" EntitySet="Reservations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

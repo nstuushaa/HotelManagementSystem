@@ -1,0 +1,60 @@
+﻿<Page x:Class="HotelManagementSystem.Pages.NewReservation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelManagementSystem.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewReservation">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Создание нового бронирования" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Гость:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <ComboBox x:Name="GuestComboBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" Height="30"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Доступный номер:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <ComboBox x:Name="RoomComboBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Height="30"
+                      SelectionChanged="RoomComboBox_SelectionChanged"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Дата заезда:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <DatePicker x:Name="CheckInDatePicker" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" Height="30" IsEnabled="False"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Количество дней:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <TextBox x:Name="DaysTextBox" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" Height="30" Text="1"
+                     TextChanged="DaysTextBox_TextChanged"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата выезда:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <DatePicker x:Name="CheckOutDatePicker" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Height="30" IsEnabled="False"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Информация о номере:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+            <TextBlock x:Name="RoomInfoText" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10" TextWrapping="Wrap"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="CancelButton" Content="Отмена" Width="100" Margin="0,0,10,0" Click="CancelButton_Click"/>
+            <Button x:Name="CreateButton" Content="Создать" Width="100" Click="CreateButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

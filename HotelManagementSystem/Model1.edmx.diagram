@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e716f02d012141c18b3eb383a53b2715" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.AdditionalEquipment" Width="1.5" PointX="3.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FoodOrders" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Guests" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Menu" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Positions" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reservations" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Restaurants" Width="1.5" PointX="1.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reviews" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RoomEquipment" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Rooms" Width="1.5" PointX="3.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RoomTypes" Width="1.5" PointX="1.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ServiceOrders" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Staff" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Statuses" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WorkSchedules" Width="1.5" PointX="10.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__RoomEquip__Equip__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__FoodOrder__Guest__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__FoodOrder__MenuI__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__FoodOrder__Statu__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Reservati__Guest__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Reviews__GuestID__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ServiceOr__Guest__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Menu__Restaurant__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Staff__PositionI__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Reservati__Statu__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reservations_Rooms" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__RoomEquip__RoomI__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Rooms__TypeID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ServiceOr__Servi__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ServiceOr__Statu__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__WorkSched__Staff__628FA481" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
